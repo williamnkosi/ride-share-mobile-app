@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { KeyboardAvoidingView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Provider } from "react-redux";
 import HomeScreen from "./screens/HomeScreen";
@@ -15,22 +15,24 @@ export default function App() {
     <Provider store={store}>
       <NavigationContainer>
         <SafeAreaProvider>
-          <Stack.Navigator>
-            <Stack.Screen
-              name="HomeScreen"
-              component={HomeScreen}
-              options={{
-                headerShown: false,
-              }}
-            />
-            <Stack.Screen
-              name="MapScreen"
-              component={MapScreen}
-              options={{
-                headerShown: false,
-              }}
-            />
-          </Stack.Navigator>
+          <KeyboardAvoidingView style={styles.Keycontainer} behavior="height">
+            <Stack.Navigator>
+              <Stack.Screen
+                name="HomeScreen"
+                component={HomeScreen}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="MapScreen"
+                component={MapScreen}
+                options={{
+                  headerShown: false,
+                }}
+              />
+            </Stack.Navigator>
+          </KeyboardAvoidingView>
         </SafeAreaProvider>
       </NavigationContainer>
     </Provider>
@@ -38,6 +40,16 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  Keycontainer: {
+    flex: 1,
+  },
+  inner: {
+    margin: 20,
+    padding: 24,
+    flex: 1,
+    justifyContent: "space-around",
+  },
+
   container: {
     flex: 1,
     backgroundColor: "#fff",

@@ -5,14 +5,14 @@ import type { RootState } from "../store";
 // Define a type for the slice state
 interface navState {
   origin: any;
-  destination: null;
+  destination: any;
   travelTimeInformation: null;
 }
 
 // Define the initial state using that type
 const initialState: navState = {
   origin: 0,
-  destination: null,
+  destination: 0,
   travelTimeInformation: null,
 };
 
@@ -23,7 +23,6 @@ export const navSlice = createSlice({
   reducers: {
     setOrigin: (state, action) => {
       state.origin = action.payload;
-      console.log(action.payload);
     },
     setDestination: (state, action) => {
       state.destination = action.payload;
