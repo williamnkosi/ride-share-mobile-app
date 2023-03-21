@@ -43,7 +43,6 @@ const HomeScreen: any = (props: Props) => {
             // available options: https://developers.google.com/places/web-service/autocomplete
             key: "",
             language: "en", // language of the results
-            types: "(cities)", // default: 'geocode'
           }}
         />
         <NavOptions />
