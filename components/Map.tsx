@@ -13,7 +13,6 @@ const Map = (props: Props) => {
   const mapRef = useRef<MapView>(null);
 
   useEffect(() => {
-    console.log("000000");
     if (!origin || !destination) return;
 
     mapRef?.current?.fitToSuppliedMarkers(["origin", "destination"], {
